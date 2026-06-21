@@ -35,5 +35,5 @@ in this order:
    in file X." Do **not** paste the sensitive content into the issue; naming the
    file is enough to start the conversation without making the exposure worse.
 
-A dedicated security contact email will be added before broad public launch.
-Until then, the steps above are the supported reporting path.
+Until a dedicated security contact is published, the steps above are the
+supported reporting path.
