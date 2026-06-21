@@ -19,14 +19,16 @@ HandoffOS gives you:
 
 ## Quick start
 
+Requires Python 3.9+. Clone the repo, then run from the repository root:
+
 ```bash
 pip install -e .
 handoffos init my-project
 handoffos status my-project
 ```
 
-Run `pip install -e .` from the cloned repository root. This creates a local
-HandoffOS workspace. No network calls. No accounts. No integrations.
+This creates a local HandoffOS workspace. No network calls. No accounts. No
+integrations.
 
 ## How it works
 
