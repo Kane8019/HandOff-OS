@@ -32,7 +32,7 @@ item.
 
 - [ ] README opens with the name, tagline, and one-liner.
 - [ ] The problem, the solution, and the role split are clear within a screen.
-- [ ] Setup is presented as a 10-minute path.
+- [ ] Setup is presented as a 2-minute path, plus a zero-install option.
 - [ ] "What this is not" section is present and honest.
 - [ ] The "Repository layout" tree in the README matches the actual repo layout.
 
