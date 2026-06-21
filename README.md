@@ -2,13 +2,27 @@
 
 Your AI forgets. Your projects don't have to.
 
-HandOff-OS is a lightweight project-memory and handoff layer for ChatGPT, Claude, Cursor, and other AI tools.
+HandOff-OS is a lightweight project-memory and handoff layer for ChatGPT, Claude, Cursor, Codex, and other AI tools.
 
 Long AI projects fail when the project state only lives inside a chat. The chat gets too long, the next model starts cold, and yesterday's decisions turn into a bad summary.
 
 HandOff-OS keeps the durable state in small Markdown files so a fresh chat can resume without guessing, rereading transcripts, or mixing projects.
 
 **Try it first:** [AI project rescue demo](demo/ai-project-rescue/) — see a fresh chat recover a lost project from two Markdown files.
+
+---
+
+## Who this is for
+
+HandOff-OS is for people running long AI-assisted work across more than one tool:
+
+- builders using ChatGPT plus Claude Code, Cursor, Codex, or another coding agent
+- solo founders and operators who manage several projects at once
+- researchers and technical PMs who need decisions, source pointers, and boundaries to survive new chats
+- consultants, legal-style operators, and high-consequence workflows where "the AI probably remembers" is not good enough
+- small teams that need an AI handoff pattern before they need a full project-management platform
+
+It is not necessary for one-off questions, short prompts, or disposable experiments.
 
 ---
 
@@ -128,6 +142,13 @@ You do the real thinking in ChatGPT, Claude, Cursor, or another AI tool. Before 
 
 Save only what would make future work wrong, blocked, or duplicated if lost.
 
+A fresh AI chat should be able to answer four questions from durable state:
+
+1. What is true now?
+2. What decision or task is next?
+3. What must not be touched?
+4. Where is the real source material?
+
 ---
 
 ## What HandOff-OS stores
@@ -156,7 +177,7 @@ HandOff-OS assumes a simple division of labor that works across AI tools:
 | Role | Who | Does |
 |---|---|---|
 | Scope & review | ChatGPT or another reasoning model | Frames the task, defines boundaries, reviews the result |
-| Draft & build | Claude, Cursor, or another building tool | Produces the draft, code, or artifact within scope |
+| Draft & build | Claude, Cursor, Codex, or another building tool | Produces the draft, code, or artifact within scope |
 | Approve | Human owner | Approves execution, publication, or high-consequence changes |
 
 One AI may draft and another may review, but there are no automatic AI-checks-AI loops.
@@ -218,7 +239,6 @@ Better:
 ```text
 Source pointer: internal ticket ABC-123
 Source pointer: local file path known to the owner
-Source pointer: private workspace page title, redacted if shared
 ```
 
 ---
@@ -317,6 +337,7 @@ Two names that are intentionally different:
 ## Learn more
 
 - [AI project rescue demo](demo/ai-project-rescue/) — recover a lost chat from durable state
+- [Launch page copy](docs/launch.md) — the short external-facing explanation
 - [Philosophy](docs/philosophy.md) — chat is scratch, state is durable
 - [Risk tiers](docs/risk-tiers.md) — when an action needs review
 - [Dual-AI workflow](docs/dual-ai-workflow.md) — scope, build, review, approve
@@ -324,6 +345,24 @@ Two names that are intentionally different:
 - [GitHub workflow](docs/github-workflow.md) — proposal → branch → review → merge
 - [Publication review checklist](docs/publication-review-checklist.md) — run before going public
 - [Examples](examples/) — software, research, and a redacted legal workflow
+
+---
+
+## Need help setting this up?
+
+HandOff-OS is free, local-first, and designed to work without an account or hosted service.
+
+If you run long AI-assisted projects and keep losing context across ChatGPT, Claude Code, Cursor, Codex, or other tools, the likely issue is not prompting. It is missing project memory, source-of-truth boundaries, and approval gates.
+
+Possible setup help:
+
+- project memory structure
+- ChatGPT / Claude / Cursor / Codex handoff prompts
+- GitHub, Notion, Drive, or local-file source-of-truth map
+- review and approval gates for high-consequence work
+- checkpoint rules so future chats resume without guessing
+
+Open a GitHub issue or discussion to share your workflow and what broke. Paid implementation, workflow audit, or template support can be added later if there is demand.
 
 ---
 
