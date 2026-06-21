@@ -8,7 +8,7 @@ Long AI projects fail when the project state only lives inside a chat. The chat 
 
 HandOff-OS keeps the durable state in small Markdown files so a fresh chat can resume without guessing, rereading transcripts, or mixing projects.
 
-![HandOff-OS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.](docs/assets/handoffos-flow.svg)
+**Try it first:** [AI project rescue demo](demo/ai-project-rescue/) — see a fresh chat recover a lost project from two Markdown files.
 
 ---
 
@@ -26,8 +26,6 @@ fresh chat recovers the project state
 work continues without rebuilding context
 ```
 
-Start here: [AI project rescue demo](demo/ai-project-rescue/)
-
 The demo shows a fictional AI-assisted software project where the original chat is lost. A new chat recovers from two small files — `project-context.md` and `history-log.md` — instead of a transcript.
 
 What the fresh chat gets back:
@@ -39,6 +37,8 @@ What the fresh chat gets back:
 - source pointers
 
 No chat log. No private payload. No guessing.
+
+![HandOff-OS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.](docs/assets/handoffos-flow.svg)
 
 ---
 
@@ -218,7 +218,7 @@ Better:
 ```text
 Source pointer: internal ticket ABC-123
 Source pointer: local file path known to the owner
-Source pointer: private workspace page title
+Source pointer: private workspace page title, redacted if shared
 ```
 
 ---
