@@ -1,4 +1,4 @@
-"""Packaged HandoffOS templates.
+"""Packaged HandOff-OS templates.
 
 These four Markdown files are the single source the CLI reads (via
 importlib.resources) when scaffolding a workspace. They are kept byte-identical

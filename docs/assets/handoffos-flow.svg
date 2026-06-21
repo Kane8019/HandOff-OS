@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="HandoffOS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="HandOff-OS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#f8fafc"/>
@@ -24,7 +24,7 @@
   <rect x="0" y="0" width="1280" height="640" fill="url(#bg)"/>
 
   <!-- ===== Header ===== -->
-  <text x="72" y="86" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#0f172a" letter-spacing="-0.5">HandoffOS</text>
+  <text x="72" y="86" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#0f172a" letter-spacing="-0.5">HandOff-OS</text>
   <text x="74" y="124" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="23" font-weight="600" fill="#334155">Your AI forgets. Your projects don't have to.</text>
   <text x="74" y="154" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#64748b">Durable project state for AI-assisted work</text>
 
@@ -124,5 +124,5 @@
   </g>
 
   <!-- ===== Footer ===== -->
-  <text x="640" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">local-only · markdown state · MIT</text>
+  <text x="640" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">local-only Â· markdown state Â· MIT</text>
 </svg>

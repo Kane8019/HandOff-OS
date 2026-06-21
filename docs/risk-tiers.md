@@ -6,7 +6,7 @@ risky.
 
 > **Risk belongs to an action, not an entire project.**
 
-So HandoffOS doesn't grade projects. It grades actions, and it keeps the grading
+So HandOff-OS doesn't grade projects. It grades actions, and it keeps the grading
 to two practical tiers.
 
 ## LOW consequence
@@ -61,7 +61,7 @@ Ask two questions about the **action** (not the project):
 1. **Can I undo this easily?**
 2. **Does anyone outside this workspace see the result?**
 
-If you can undo it and nobody outside sees it → LOW. Otherwise → treat it as HIGH.
+If you can undo it and nobody outside sees it â†’ LOW. Otherwise â†’ treat it as HIGH.
 
 ## This is not fear-based bureaucracy
 

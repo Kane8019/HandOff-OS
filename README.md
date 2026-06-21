@@ -1,13 +1,13 @@
-# HandoffOS
+# HandOff-OS
 
 Your AI forgets. Your projects don't have to.
 
 Every serious AI project eventually dies in a chat history.
 The chat gets too long, a new model starts cold, and yesterday's decisions turn into a bad summary.
 
-HandoffOS keeps the few facts that matter alive outside the chat.
+HandOff-OS keeps the few facts that matter alive outside the chat.
 
-HandoffOS gives you:
+HandOff-OS gives you:
 
 - a living `project-context.md`
 - a durable `history-log.md`
@@ -15,7 +15,7 @@ HandoffOS gives you:
 - a tiny local CLI: `init` and `status`
 - a demo showing how to recover a lost AI project in a fresh chat
 
-![HandoffOS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.](docs/assets/handoffos-flow.svg)
+![HandOff-OS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.](docs/assets/handoffos-flow.svg)
 
 ---
 
@@ -29,7 +29,7 @@ handoffos init my-project
 handoffos status my-project
 ```
 
-This creates a local HandoffOS workspace. No network calls. No accounts. No
+This creates a local HandOff-OS workspace. No network calls. No accounts. No
 integrations.
 
 ## How it works
@@ -37,7 +37,7 @@ integrations.
 See the [flow diagram](docs/assets/handoffos-flow.svg) at the top.
 
 You do the real thinking in a chat. Before you close it, you checkpoint the few
-durable facts into two small files. A new chat — any model — recovers the
+durable facts into two small files. A new chat â€” any model â€” recovers the
 project from those files instead of a transcript.
 
 ## Try the 2-minute rescue demo
@@ -51,7 +51,7 @@ chat recovers from `project-context.md` and `history-log.md`.
 
 Chat memory is useful, but it is not a project source of truth.
 
-HandoffOS keeps project state:
+HandOff-OS keeps project state:
 
 - explicit
 - editable
@@ -64,7 +64,7 @@ future work wrong, blocked, or duplicated if lost.
 
 ## Who this is for
 
-HandoffOS is for people running multi-day AI-assisted projects:
+HandOff-OS is for people running multi-day AI-assisted projects:
 
 - Claude Code / Cursor / ChatGPT power users
 - solo builders
@@ -82,7 +82,7 @@ Keep the durable state of a project **outside any single chat**.
 
 > **Chat is scratch. Durable state lives outside the chat.**
 
-HandoffOS is a small set of documents (and an optional CLI that creates them)
+HandOff-OS is a small set of documents (and an optional CLI that creates them)
 that hold the few things future-you actually needs:
 
 - the **decisions** that have been made,
@@ -95,13 +95,13 @@ execution, no service integrations. No lock-in.
 
 ## The role split
 
-HandoffOS assumes a simple division of labor that works across tools:
+HandOff-OS assumes a simple division of labor that works across tools:
 
 | Role | Who | Does |
 |---|---|---|
 | **Scope & review** | ChatGPT (or any "thinking" model) | Frames the task, defines boundaries, reviews the result |
 | **Draft & build** | Claude (or any "building" model) | Produces the draft, code, or artifact within that scope |
-| **Approve** | The human owner | Approves execution or publication — always |
+| **Approve** | The human owner | Approves execution or publication â€” always |
 
 One AI may draft and another may review, but there are **no automatic
 AI-checks-AI loops**. The human owner is the only approver.
@@ -129,8 +129,8 @@ AI-checks-AI loops**. The human owner is the only approver.
 3. **Fill in `project-context.md`.** Status, purpose, current state, next
    action, and active boundaries. Two minutes.
 
-4. **Work in your AI tools as usual.** When something durable happens — a
-   decision, a new boundary, a finished artifact — write it down.
+4. **Work in your AI tools as usual.** When something durable happens â€” a
+   decision, a new boundary, a finished artifact â€” write it down.
 
 5. **Before you close a chat,** update `project-context.md` and add a line to
    `history-log.md`. That's the handoff.
@@ -140,16 +140,16 @@ context file is the briefing.
 
 ---
 
-## What to save — and what not to
+## What to save â€” and what not to
 
 **Save only what would make future work wrong, blocked, or duplicated if lost.**
 
 Save:
 
 - **Decisions** that are now load-bearing.
-- **Next actions** — the single most useful one.
-- **Source pointers** — where the real material lives (a file path, a doc title, a ticket).
-- **Active boundaries** — what's in and out of scope right now.
+- **Next actions** â€” the single most useful one.
+- **Source pointers** â€” where the real material lives (a file path, a doc title, a ticket).
+- **Active boundaries** â€” what's in and out of scope right now.
 
 Do **not** save:
 
@@ -166,8 +166,8 @@ If losing it wouldn't make future work wrong, blocked, or duplicated, it's scrat
 This repository is a **public, clean-room edition**. Everything in it is
 abstract guidance, reusable templates, and **fictional** examples.
 
-When you use HandoffOS for real work, keep private material out of any file you
-might share. Do not put into shared HandoffOS files:
+When you use HandOff-OS for real work, keep private material out of any file you
+might share. Do not put into shared HandOff-OS files:
 
 - exported private documents,
 - real legal facts, case numbers, or party names,
@@ -176,7 +176,7 @@ might share. Do not put into shared HandoffOS files:
 - private emails or communications,
 - credentials, tokens, or private links.
 
-HandoffOS stores **pointers**, not payloads. Point to where the sensitive
+HandOff-OS stores **pointers**, not payloads. Point to where the sensitive
 source lives; don't paste it in.
 
 ---
@@ -187,10 +187,10 @@ You don't need the CLI. Copy the files from [`templates/`](templates/) into a
 folder and start filling them in:
 
 ```text
-project-context.md   ← the living briefing
-history-log.md       ← what changed and when
-proposal.md          ← for a specific decision or action
-review.md            ← the reviewer's verdict
+project-context.md   â† the living briefing
+history-log.md       â† what changed and when
+proposal.md          â† for a specific decision or action
+review.md            â† the reviewer's verdict
 ```
 
 The [`templates/operating-rules-lite.md`](templates/operating-rules-lite.md)
@@ -203,14 +203,14 @@ prompt.
 # create a new workspace
 handoffos init my-project
 
-# regenerate the four HandoffOS files in an existing workspace
+# regenerate the four HandOff-OS files in an existing workspace
 handoffos init my-project --force
 
 # print a compact status summary from project-context.md
 handoffos status my-project
 ```
 
-**What `--force` does:** it overwrites the four HandoffOS files
+**What `--force` does:** it overwrites the four HandOff-OS files
 (`project-context.md`, `history-log.md`, `proposal.md`, `review.md`) if they
 already exist.
 
@@ -223,7 +223,7 @@ so you can't clobber them by accident.
 
 The v0.1 CLI is **local-only**. It uses only the Python standard library, makes
 **no network calls**, and connects to **no external service**. It reads bundled
-templates and writes Markdown files on your machine — nothing else.
+templates and writes Markdown files on your machine â€” nothing else.
 
 ---
 
@@ -240,17 +240,17 @@ templates and writes Markdown files on your machine — nothing else.
 
 ```text
 handoffos/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── SECURITY.md
-├── pyproject.toml
-├── docs/          # philosophy, risk tiers, workflows, checklist, assets/
-├── templates/     # copyable Markdown templates
-├── examples/      # synthetic software / research / redacted-legal demos
-├── demo/          # walkthrough: recover a lost chat from durable state
-├── handoffos/     # the Python package (CLI + packaged templates)
-└── tests/         # standard-library test suite
+â”œâ”€â”€ README.md
+â”œâ”€â”€ LICENSE
+â”œâ”€â”€ CONTRIBUTING.md
+â”œâ”€â”€ SECURITY.md
+â”œâ”€â”€ pyproject.toml
+â”œâ”€â”€ docs/          # philosophy, risk tiers, workflows, checklist, assets/
+â”œâ”€â”€ templates/     # copyable Markdown templates
+â”œâ”€â”€ examples/      # synthetic software / research / redacted-legal demos
+â”œâ”€â”€ demo/          # walkthrough: recover a lost chat from durable state
+â”œâ”€â”€ handoffos/     # the Python package (CLI + packaged templates)
+â””â”€â”€ tests/         # standard-library test suite
 ```
 
 Two folders that are easy to confuse:
@@ -260,14 +260,14 @@ Two folders that are easy to confuse:
 
 ## Learn more
 
-- [Philosophy](docs/philosophy.md) — chat is scratch, state is durable
-- [Risk tiers](docs/risk-tiers.md) — when an action needs review
-- [Dual-AI workflow](docs/dual-ai-workflow.md) — scope, build, review, approve
-- [Notion setup](docs/notion-setup.md) — a manual, no-API home for state
-- [GitHub workflow](docs/github-workflow.md) — proposal → branch → review → merge
-- [Publication review checklist](docs/publication-review-checklist.md) — run before going public
-- [AI project rescue demo](demo/ai-project-rescue/) — recover a lost chat from durable state
-- [Examples](examples/) — software, research, and a redacted legal workflow
+- [Philosophy](docs/philosophy.md) â€” chat is scratch, state is durable
+- [Risk tiers](docs/risk-tiers.md) â€” when an action needs review
+- [Dual-AI workflow](docs/dual-ai-workflow.md) â€” scope, build, review, approve
+- [Notion setup](docs/notion-setup.md) â€” a manual, no-API home for state
+- [GitHub workflow](docs/github-workflow.md) â€” proposal â†’ branch â†’ review â†’ merge
+- [Publication review checklist](docs/publication-review-checklist.md) â€” run before going public
+- [AI project rescue demo](demo/ai-project-rescue/) â€” recover a lost chat from durable state
+- [Examples](examples/) â€” software, research, and a redacted legal workflow
 
 ## Development
 

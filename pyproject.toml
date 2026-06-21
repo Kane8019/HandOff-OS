@@ -9,7 +9,7 @@ description = "A lightweight project-memory and handoff layer for AI-assisted wo
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "HandoffOS contributors" }]
+authors = [{ name = "HandOff-OS contributors" }]
 keywords = ["ai", "memory", "handoff", "workflow", "llm", "claude", "chatgpt"]
 classifiers = [
     "Development Status :: 3 - Alpha",

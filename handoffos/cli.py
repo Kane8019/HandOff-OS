@@ -1,4 +1,4 @@
-"""HandoffOS command-line interface.
+"""HandOff-OS command-line interface.
 
 A minimal, standard-library-only CLI. It is local-only: it makes no network
 calls and connects to no external service. It only reads packaged templates and
@@ -32,7 +32,7 @@ def _read_template(name: str) -> str:
 
 
 def init_project(target: Path, force: bool = False) -> int:
-    """Create a HandoffOS workspace at *target*.
+    """Create a HandOff-OS workspace at *target*.
 
     Writes exactly the four files in ``WORKSPACE_FILES``. ``--force`` only
     overwrites those four known files; it never deletes or touches any other
@@ -47,12 +47,12 @@ def init_project(target: Path, force: bool = False) -> int:
                 file=sys.stderr,
             )
             return 1
-        # Directory exists. Refuse to clobber existing HandoffOS files unless
+        # Directory exists. Refuse to clobber existing HandOff-OS files unless
         # --force is given.
         existing = [name for name in WORKSPACE_FILES if (target / name).exists()]
         if existing and not force:
             print(
-                f"error: {target} already contains HandoffOS files "
+                f"error: {target} already contains HandOff-OS files "
                 f"({', '.join(existing)}).",
                 file=sys.stderr,
             )
@@ -79,13 +79,13 @@ def init_project(target: Path, force: bool = False) -> int:
         print(f"created {path}")
 
     print()
-    print(f"HandoffOS workspace ready at {target}")
+    print(f"HandOff-OS workspace ready at {target}")
     print("Next: open project-context.md and fill in Status, Purpose, and Next action.")
     return 0
 
 
 # Fields shown by `status`, in display order. Parsing is intentionally simple
-# (line-prefix matching) — this is not a Markdown parser.
+# (line-prefix matching) â€” this is not a Markdown parser.
 STATUS_FIELDS = (
     "Status",
     "Sensitivity",
@@ -138,7 +138,7 @@ def status_project(target: Path) -> int:
     if not context.is_file():
         print(
             f"error: no project-context.md found in {target}. "
-            "Is this a HandoffOS workspace? Try `handoffos init`.",
+            "Is this a HandOff-OS workspace? Try `handoffos init`.",
             file=sys.stderr,
         )
         return 1
@@ -151,7 +151,7 @@ def status_project(target: Path) -> int:
 
     fields, high_consequence = _parse_context(text)
 
-    print(f"HandoffOS status: {target.name}")
+    print(f"HandOff-OS status: {target.name}")
     print()
     for name in STATUS_FIELDS:
         print(f"{name}: {fields[name]}".rstrip())
@@ -178,9 +178,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     init = sub.add_parser(
         "init",
-        help="Create a new HandoffOS workspace (four Markdown files).",
+        help="Create a new HandOff-OS workspace (four Markdown files).",
         description=(
-            "Create a HandoffOS workspace: project-context.md, history-log.md, "
+            "Create a HandOff-OS workspace: project-context.md, history-log.md, "
             "proposal.md, and review.md."
         ),
     )
@@ -192,7 +192,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--force",
         action="store_true",
         help=(
-            "Overwrite the four HandoffOS files (project-context.md, "
+            "Overwrite the four HandOff-OS files (project-context.md, "
             "history-log.md, proposal.md, review.md) if they already exist. "
             "Does NOT delete or modify any other file in the directory."
         ),
@@ -209,7 +209,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     status.add_argument(
         "project_dir",
-        help="Directory of an existing HandoffOS workspace.",
+        help="Directory of an existing HandOff-OS workspace.",
     )
     return parser
 

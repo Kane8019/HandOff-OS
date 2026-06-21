@@ -1,6 +1,6 @@
-# Contributing to HandoffOS
+# Contributing to HandOff-OS
 
-Thanks for your interest. HandoffOS aims to stay small, useful, and safe to
+Thanks for your interest. HandOff-OS aims to stay small, useful, and safe to
 share. A few ground rules keep it that way.
 
 ## Public-safe contributions only
@@ -19,7 +19,7 @@ first.
 
 ## Keep it lightweight
 
-HandoffOS is documentation-first with a tiny CLI. Please help it stay that way.
+HandOff-OS is documentation-first with a tiny CLI. Please help it stay that way.
 
 - **Prefer useful templates and docs over automation.** A clear template beats
   a clever script.

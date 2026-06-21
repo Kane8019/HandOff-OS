@@ -1,4 +1,4 @@
-"""Tests for the HandoffOS CLI.
+"""Tests for the HandOff-OS CLI.
 
 Written with the standard-library ``unittest`` framework so they run with no
 extra installs (no network required):

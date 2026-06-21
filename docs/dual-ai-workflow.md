@@ -1,11 +1,11 @@
 # The dual-AI workflow
 
-HandoffOS works well with two AI roles plus one human. The roles can be played
+HandOff-OS works well with two AI roles plus one human. The roles can be played
 by any tools; the names below are just a common pairing.
 
 ```text
-ChatGPT scopes  →  Claude drafts/builds  →  ChatGPT reviews  →  Human approves
-                                                                      │
+ChatGPT scopes  â†’  Claude drafts/builds  â†’  ChatGPT reviews  â†’  Human approves
+                                                                      â”‚
                                                        durable state checkpointed
 ```
 
@@ -18,7 +18,7 @@ ChatGPT scopes  →  Claude drafts/builds  →  ChatGPT reviews  →  Human appr
    `proposal.md`.
 
 2. **Claude drafts or builds within that scope.**
-   The builder produces the artifact — text, code, a plan — staying inside the
+   The builder produces the artifact â€” text, code, a plan â€” staying inside the
    boundaries that were set. If the boundaries turn out to be wrong, that's a
    signal to go back to step 1, not to quietly expand scope.
 
