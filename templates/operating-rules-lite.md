@@ -10,7 +10,7 @@ few load-bearing facts outside any single chat.
 
 ## What lives where
 
-- **Chat** is scratch â€” thinking, drafting, exploring. Disposable.
+- **Chat** is scratch — thinking, drafting, exploring. Disposable.
 - **Durable state** lives outside the chat: decisions, next action, source
   pointers, and active boundaries.
 - Save **pointers, not payloads**. Point to where sensitive material lives;
@@ -30,7 +30,7 @@ don't change the outcome.
 ## Low vs high consequence work
 
 - **Low consequence:** easily reversible, private, nobody outside sees it. Just
-  do it â€” no proposal, no review.
+  do it — no proposal, no review.
 - **High consequence:** hard to reverse, outward-facing, or touching money,
   legal matters, or others' data. Write a proposal, get a review, then approval.
 
@@ -44,14 +44,14 @@ approve, publish, or execute on its own.
 ## Dual-AI review
 
 One AI may draft and another may review. Do **not** create automatic
-AI-checks-AI loops â€” they optimize for agreement, not correctness, and they
+AI-checks-AI loops — they optimize for agreement, not correctness, and they
 hide the human's decision. Use a single review pass when warranted, then bring
 it to the owner.
 
 ## Project boundaries
 
 Write down what's in scope and what's explicitly out. If the work pushes against
-a boundary, re-scope deliberately â€” don't drift.
+a boundary, re-scope deliberately — don't drift.
 
 ## Checkpointing durable state
 
@@ -65,6 +65,6 @@ Do not copy transcripts.
 
 ## Writes and execution
 
-Any action that writes to the outside world â€” publishing, sending, deploying,
-filing, deleting something you didn't create â€” requires explicit owner approval
+Any action that writes to the outside world — publishing, sending, deploying,
+filing, deleting something you didn't create — requires explicit owner approval
 first. When in doubt, treat it as high-consequence.

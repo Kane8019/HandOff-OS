@@ -37,7 +37,7 @@ integrations.
 See the [flow diagram](docs/assets/handoffos-flow.svg) at the top.
 
 You do the real thinking in a chat. Before you close it, you checkpoint the few
-durable facts into two small files. A new chat â€” any model â€” recovers the
+durable facts into two small files. A new chat — any model — recovers the
 project from those files instead of a transcript.
 
 ## Try the 2-minute rescue demo
@@ -101,7 +101,7 @@ HandOff-OS assumes a simple division of labor that works across tools:
 |---|---|---|
 | **Scope & review** | ChatGPT (or any "thinking" model) | Frames the task, defines boundaries, reviews the result |
 | **Draft & build** | Claude (or any "building" model) | Produces the draft, code, or artifact within that scope |
-| **Approve** | The human owner | Approves execution or publication â€” always |
+| **Approve** | The human owner | Approves execution or publication — always |
 
 One AI may draft and another may review, but there are **no automatic
 AI-checks-AI loops**. The human owner is the only approver.
@@ -129,8 +129,8 @@ AI-checks-AI loops**. The human owner is the only approver.
 3. **Fill in `project-context.md`.** Status, purpose, current state, next
    action, and active boundaries. Two minutes.
 
-4. **Work in your AI tools as usual.** When something durable happens â€” a
-   decision, a new boundary, a finished artifact â€” write it down.
+4. **Work in your AI tools as usual.** When something durable happens — a
+   decision, a new boundary, a finished artifact — write it down.
 
 5. **Before you close a chat,** update `project-context.md` and add a line to
    `history-log.md`. That's the handoff.
@@ -140,16 +140,16 @@ context file is the briefing.
 
 ---
 
-## What to save â€” and what not to
+## What to save — and what not to
 
 **Save only what would make future work wrong, blocked, or duplicated if lost.**
 
 Save:
 
 - **Decisions** that are now load-bearing.
-- **Next actions** â€” the single most useful one.
-- **Source pointers** â€” where the real material lives (a file path, a doc title, a ticket).
-- **Active boundaries** â€” what's in and out of scope right now.
+- **Next actions** — the single most useful one.
+- **Source pointers** — where the real material lives (a file path, a doc title, a ticket).
+- **Active boundaries** — what's in and out of scope right now.
 
 Do **not** save:
 
@@ -187,10 +187,10 @@ You don't need the CLI. Copy the files from [`templates/`](templates/) into a
 folder and start filling them in:
 
 ```text
-project-context.md   â† the living briefing
-history-log.md       â† what changed and when
-proposal.md          â† for a specific decision or action
-review.md            â† the reviewer's verdict
+project-context.md   ← the living briefing
+history-log.md       ← what changed and when
+proposal.md          ← for a specific decision or action
+review.md            ← the reviewer's verdict
 ```
 
 The [`templates/operating-rules-lite.md`](templates/operating-rules-lite.md)
@@ -223,7 +223,7 @@ so you can't clobber them by accident.
 
 The v0.1 CLI is **local-only**. It uses only the Python standard library, makes
 **no network calls**, and connects to **no external service**. It reads bundled
-templates and writes Markdown files on your machine â€” nothing else.
+templates and writes Markdown files on your machine — nothing else.
 
 ---
 
@@ -240,17 +240,17 @@ templates and writes Markdown files on your machine â€” nothing else.
 
 ```text
 handoffos/
-â”œâ”€â”€ README.md
-â”œâ”€â”€ LICENSE
-â”œâ”€â”€ CONTRIBUTING.md
-â”œâ”€â”€ SECURITY.md
-â”œâ”€â”€ pyproject.toml
-â”œâ”€â”€ docs/          # philosophy, risk tiers, workflows, checklist, assets/
-â”œâ”€â”€ templates/     # copyable Markdown templates
-â”œâ”€â”€ examples/      # synthetic software / research / redacted-legal demos
-â”œâ”€â”€ demo/          # walkthrough: recover a lost chat from durable state
-â”œâ”€â”€ handoffos/     # the Python package (CLI + packaged templates)
-â””â”€â”€ tests/         # standard-library test suite
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── pyproject.toml
+├── docs/          # philosophy, risk tiers, workflows, checklist, assets/
+├── templates/     # copyable Markdown templates
+├── examples/      # synthetic software / research / redacted-legal demos
+├── demo/          # walkthrough: recover a lost chat from durable state
+├── handoffos/     # the Python package (CLI + packaged templates)
+└── tests/         # standard-library test suite
 ```
 
 Two folders that are easy to confuse:
@@ -260,14 +260,14 @@ Two folders that are easy to confuse:
 
 ## Learn more
 
-- [Philosophy](docs/philosophy.md) â€” chat is scratch, state is durable
-- [Risk tiers](docs/risk-tiers.md) â€” when an action needs review
-- [Dual-AI workflow](docs/dual-ai-workflow.md) â€” scope, build, review, approve
-- [Notion setup](docs/notion-setup.md) â€” a manual, no-API home for state
-- [GitHub workflow](docs/github-workflow.md) â€” proposal â†’ branch â†’ review â†’ merge
-- [Publication review checklist](docs/publication-review-checklist.md) â€” run before going public
-- [AI project rescue demo](demo/ai-project-rescue/) â€” recover a lost chat from durable state
-- [Examples](examples/) â€” software, research, and a redacted legal workflow
+- [Philosophy](docs/philosophy.md) — chat is scratch, state is durable
+- [Risk tiers](docs/risk-tiers.md) — when an action needs review
+- [Dual-AI workflow](docs/dual-ai-workflow.md) — scope, build, review, approve
+- [Notion setup](docs/notion-setup.md) — a manual, no-API home for state
+- [GitHub workflow](docs/github-workflow.md) — proposal → branch → review → merge
+- [Publication review checklist](docs/publication-review-checklist.md) — run before going public
+- [AI project rescue demo](demo/ai-project-rescue/) — recover a lost chat from durable state
+- [Examples](examples/) — software, research, and a redacted legal workflow
 
 ## Development
 

@@ -124,5 +124,5 @@
   </g>
 
   <!-- ===== Footer ===== -->
-  <text x="640" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">local-only Â· markdown state Â· MIT</text>
+  <text x="640" y="600" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">local-only · markdown state · MIT</text>
 </svg>

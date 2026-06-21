@@ -4,7 +4,7 @@ A simple, manual GitHub rhythm that fits the HandOff-OS roles. No automation, no
 bots, no AI with write access. The human owner merges.
 
 ```text
-issue / proposal  â†’  branch  â†’  local draft/build  â†’  review  â†’  owner approval  â†’  merge
+issue / proposal  →  branch  →  local draft/build  →  review  →  owner approval  →  merge
 ```
 
 ## The steps
@@ -33,7 +33,7 @@ issue / proposal  â†’  branch  â†’  local draft/build  â†’  revie
    `PASS / REVISE / BLOCKED / OUT_OF_SCOPE`. Reviewers comment; they do not merge.
 
 5. **Owner approval.**
-   The human owner reads the review and decides. Approval is explicit â€” a comment
+   The human owner reads the review and decides. Approval is explicit — a comment
    like `Approved to merge` or a formal PR approval. This is the only step that
    authorizes the change to land.
 

@@ -1,7 +1,7 @@
 # Publication Review Checklist
 
 Run through this before HandOff-OS is made public. The goal is a clean, safe,
-credible v0.1. Nothing here authorizes publication on its own â€” see the final
+credible v0.1. Nothing here authorizes publication on its own — see the final
 item.
 
 ## 1. Private-data check

@@ -85,7 +85,7 @@ def init_project(target: Path, force: bool = False) -> int:
 
 
 # Fields shown by `status`, in display order. Parsing is intentionally simple
-# (line-prefix matching) â€” this is not a Markdown parser.
+# (line-prefix matching) — this is not a Markdown parser.
 STATUS_FIELDS = (
     "Status",
     "Sensitivity",

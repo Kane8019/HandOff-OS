@@ -1,12 +1,12 @@
 # Demo: AI project rescue
 
 A 2-minute walkthrough of the one thing HandOff-OS is for: **resuming a project
-in a fresh chat after the old chat is gone** â€” without re-explaining everything.
+in a fresh chat after the old chat is gone** — without re-explaining everything.
 
 The scenario is fictional. A solo builder is adding a `weekly-digest-email`
 feature to a small demo app. Chat 1 scopes the work and Claude drafts it. Then
-the chat is "lost." Chat 2 recovers the project from two small files â€”
-`project-context.md` and `history-log.md` â€” not from a transcript.
+the chat is "lost." Chat 2 recovers the project from two small files —
+`project-context.md` and `history-log.md` — not from a transcript.
 
 > The point: HandOff-OS does **not** store the conversation. It stores only the
 > durable state needed to pick the work back up.
@@ -19,7 +19,7 @@ the chat is "lost." Chat 2 recovers the project from two small files â€”
 2. **Read [`project-context.md`](project-context.md) and
    [`history-log.md`](history-log.md).**
    This is everything that was checkpointed out of that chat. Notice how little
-   it is â€” a living briefing plus a short change log.
+   it is — a living briefing plus a short change log.
 
 3. **Pretend the chat was lost.**
    The window is closed. The transcript is gone. All you have is the two files
@@ -37,7 +37,7 @@ the chat is "lost." Chat 2 recovers the project from two small files â€”
 
 - The recovery prompt contains the **two state files**, not the chat history.
 - The new chat knows the **decisions**, the **next action**, and the **active
-  boundaries** â€” including that production sending is **not approved**.
+  boundaries** — including that production sending is **not approved**.
 - Total state is a couple of screens of plain Markdown. That's the handoff.
 
 Everything here is synthetic: no real company, domain, user data, credentials,

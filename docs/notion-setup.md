@@ -1,7 +1,7 @@
 # Notion setup (manual, no API)
 
 You can keep HandOff-OS state anywhere plain text lives. Notion is a comfortable
-home for it. This setup is **fully manual** â€” no API, no integration, no
+home for it. This setup is **fully manual** — no API, no integration, no
 automation, no network calls from HandOff-OS. You copy and paste.
 
 ## The minimal structure
@@ -10,11 +10,11 @@ Create one Notion page per project, with four sub-pages (or four toggles, if you
 prefer everything on one page):
 
 ```text
-ðŸ“ My Project                â† top-level project page
-   ðŸ“„ Project Context        â† from templates/project-context.md
-   ðŸ“„ History Log            â† from templates/history-log.md
-   ðŸ“„ Proposals              â† one entry per proposal, from templates/proposal.md
-   ðŸ“„ Reviews                â† one entry per review, from templates/review.md
+📁 My Project                ← top-level project page
+   📄 Project Context        ← from templates/project-context.md
+   📄 History Log            ← from templates/history-log.md
+   📄 Proposals              ← one entry per proposal, from templates/proposal.md
+   📄 Reviews                ← one entry per review, from templates/review.md
 ```
 
 ## How to build it
@@ -42,11 +42,11 @@ prefer everything on one page):
 ## What to keep out of Notion
 
 HandOff-OS stores **pointers, not payloads**. In a shared or syncable Notion
-workspace, do not paste private source material â€” real legal facts, personal
+workspace, do not paste private source material — real legal facts, personal
 data, identifiers, credentials, or private documents. Instead, write a pointer:
 
 ```text
-Source pointer: "Lease draft v3 â€” in the owner's private drive, not linked here."
+Source pointer: "Lease draft v3 — in the owner's private drive, not linked here."
 ```
 
 That keeps the state recoverable without turning your notes into a copy of the

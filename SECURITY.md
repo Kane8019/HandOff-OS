@@ -28,10 +28,10 @@ a security-relevant issue, report it through the most private channel available,
 in this order:
 
 1. **GitHub private vulnerability reporting**, if it is enabled for this
-   repository (repository **Security** tab â†’ **Report a vulnerability**). This
+   repository (repository **Security** tab → **Report a vulnerability**). This
    keeps the report confidential.
 2. **If no private channel is available,** open a **minimal public issue**
-   without any sensitive details â€” for example, "possible private-data exposure
+   without any sensitive details — for example, "possible private-data exposure
    in file X." Do **not** paste the sensitive content into the issue; naming the
    file is enough to start the conversation without making the exposure worse.
 
