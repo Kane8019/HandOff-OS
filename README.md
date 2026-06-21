@@ -15,6 +15,8 @@ HandoffOS gives you:
 - a tiny local CLI: `init` and `status`
 - a demo showing how to recover a lost AI project in a fresh chat
 
+![HandoffOS visual: messy AI chat becomes durable Markdown state, then a fresh chat recovers the project.](docs/assets/handoffos-flow.svg)
+
 ---
 
 ## Quick start
@@ -32,14 +34,7 @@ integrations.
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A[Chat 1: scope and build] --> B[Checkpoint durable state]
-    B --> C[project-context.md]
-    B --> D[history-log.md]
-    C --> E[Chat 2: recover in 60 seconds]
-    D --> E
-```
+See the [flow diagram](docs/assets/handoffos-flow.svg) at the top.
 
 You do the real thinking in a chat. Before you close it, you checkpoint the few
 durable facts into two small files. A new chat — any model — recovers the
@@ -250,7 +245,7 @@ handoffos/
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── pyproject.toml
-├── docs/          # philosophy, risk tiers, workflows, setup, checklist
+├── docs/          # philosophy, risk tiers, workflows, checklist, assets/
 ├── templates/     # copyable Markdown templates
 ├── examples/      # synthetic software / research / redacted-legal demos
 ├── demo/          # walkthrough: recover a lost chat from durable state
