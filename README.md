@@ -2,30 +2,82 @@
 
 Your AI forgets. Your projects don't have to.
 
-HandoffOS is a lightweight project-memory and handoff layer that keeps
-AI-assisted work recoverable across chats, tools, and models.
+Every serious AI project eventually dies in a chat history.
+The chat gets too long, a new model starts cold, and yesterday's decisions turn into a bad summary.
+
+HandoffOS keeps the few facts that matter alive outside the chat.
+
+HandoffOS gives you:
+
+- a living `project-context.md`
+- a durable `history-log.md`
+- proposal/review templates for high-consequence actions
+- a tiny local CLI: `init` and `status`
+- a demo showing how to recover a lost AI project in a fresh chat
 
 ---
 
-## The problem
+## Quick start
 
-Every serious AI project eventually dies in a chat history.
-The chat gets too long, a new model starts cold, and yesterday's decisions turn into a bad summary.
-HandoffOS keeps the few facts that matter alive outside the chat.
+```bash
+pip install -e .
+handoffos init my-project
+handoffos status my-project
+```
 
-## Before / After
+Run `pip install -e .` from the cloned repository root. This creates a local
+HandoffOS workspace. No network calls. No accounts. No integrations.
 
-Before HandoffOS:
-- You start a new chat with a vague summary.
-- The model forgets why decisions were made.
-- Claude and ChatGPT work from different assumptions.
-- You re-explain the project every day.
+## How it works
 
-After HandoffOS:
-- `project-context.md` is the living briefing.
-- `history-log.md` records what changed.
-- ChatGPT scopes/reviews, Claude drafts/builds, human approves.
-- A new chat can recover the project in 60 seconds.
+```mermaid
+flowchart LR
+    A[Chat 1: scope and build] --> B[Checkpoint durable state]
+    B --> C[project-context.md]
+    B --> D[history-log.md]
+    C --> E[Chat 2: recover in 60 seconds]
+    D --> E
+```
+
+You do the real thinking in a chat. Before you close it, you checkpoint the few
+durable facts into two small files. A new chat — any model — recovers the
+project from those files instead of a transcript.
+
+## Try the 2-minute rescue demo
+
+Start here: [AI project rescue demo](demo/ai-project-rescue/)
+
+The demo shows a fictional project where the original chat is lost, but a new
+chat recovers from `project-context.md` and `history-log.md`.
+
+## Why not just use chat memory?
+
+Chat memory is useful, but it is not a project source of truth.
+
+HandoffOS keeps project state:
+
+- explicit
+- editable
+- reviewable
+- tool-agnostic
+- shareable with any model or teammate
+
+The goal is not to remember everything. The goal is to save only what would make
+future work wrong, blocked, or duplicated if lost.
+
+## Who this is for
+
+HandoffOS is for people running multi-day AI-assisted projects:
+
+- Claude Code / Cursor / ChatGPT power users
+- solo builders
+- technical PMs
+- researchers and operators with long-running workflows
+- anyone who keeps restarting from bad summaries
+
+It is probably overkill for one-off questions or simple chats.
+
+---
 
 ## The solution
 
@@ -203,6 +255,11 @@ handoffos/
 ├── handoffos/     # the Python package (CLI + packaged templates)
 └── tests/         # standard-library test suite
 ```
+
+Two folders that are easy to confuse:
+
+- `demo/` is a guided walkthrough.
+- `examples/` are reusable synthetic project states.
 
 ## Learn more
 
