@@ -9,14 +9,23 @@ AI-assisted work recoverable across chats, tools, and models.
 
 ## The problem
 
-AI chats are great for thinking and terrible for remembering.
+Every serious AI project eventually dies in a chat history.
+The chat gets too long, a new model starts cold, and yesterday's decisions turn into a bad summary.
+HandoffOS keeps the few facts that matter alive outside the chat.
 
-- Chats get **long** until the model loses the thread.
-- Context goes **stale** — decisions from yesterday are buried under today's tangents.
-- Work gets **mixed** — two projects bleed into one window.
-- Work gets **lost** — you switch tools or models and the reasoning is gone.
+## Before / After
 
-The state your project actually depends on ends up trapped inside a disposable transcript.
+Before HandoffOS:
+- You start a new chat with a vague summary.
+- The model forgets why decisions were made.
+- Claude and ChatGPT work from different assumptions.
+- You re-explain the project every day.
+
+After HandoffOS:
+- `project-context.md` is the living briefing.
+- `history-log.md` records what changed.
+- ChatGPT scopes/reviews, Claude drafts/builds, human approves.
+- A new chat can recover the project in 60 seconds.
 
 ## The solution
 
@@ -147,6 +156,9 @@ handoffos init my-project
 
 # regenerate the four HandoffOS files in an existing workspace
 handoffos init my-project --force
+
+# print a compact status summary from project-context.md
+handoffos status my-project
 ```
 
 **What `--force` does:** it overwrites the four HandoffOS files
@@ -187,6 +199,7 @@ handoffos/
 ├── docs/          # philosophy, risk tiers, workflows, setup, checklist
 ├── templates/     # copyable Markdown templates
 ├── examples/      # synthetic software / research / redacted-legal demos
+├── demo/          # walkthrough: recover a lost chat from durable state
 ├── handoffos/     # the Python package (CLI + packaged templates)
 └── tests/         # standard-library test suite
 ```
@@ -199,6 +212,7 @@ handoffos/
 - [Notion setup](docs/notion-setup.md) — a manual, no-API home for state
 - [GitHub workflow](docs/github-workflow.md) — proposal → branch → review → merge
 - [Publication review checklist](docs/publication-review-checklist.md) — run before going public
+- [AI project rescue demo](demo/ai-project-rescue/) — recover a lost chat from durable state
 - [Examples](examples/) — software, research, and a redacted legal workflow
 
 ## Development

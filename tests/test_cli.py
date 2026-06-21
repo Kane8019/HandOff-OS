@@ -11,9 +11,11 @@ They are also collectable by pytest if you install the dev extra:
     python -m pytest
 """
 
+import io
 import sys
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
 
 # Make the repo importable when this file is run directly (python tests/test_cli.py).
@@ -99,6 +101,79 @@ class InitTests(unittest.TestCase):
         target = self.tmp / "afile"
         target.write_text("i am a file", encoding="utf-8")
         rc = cli.main(["init", str(target)])
+        self.assertEqual(rc, 1)
+
+
+FILLED_CONTEXT = """\
+# Project Context
+
+Status: In progress
+Sensitivity: Low
+Project purpose: Add weekly digest emails to a fictional demo app.
+Current state: Feature scoped; draft exists; production send not approved.
+Next action: Review draft and decide whether to test in staging.
+
+## Active decisions
+
+## Boundaries
+
+## Source pointers
+
+## Open questions
+
+## Unresolved high-consequence items
+
+- Production email enablement requires owner approval.
+"""
+
+
+class StatusTests(unittest.TestCase):
+    def setUp(self):
+        self._tmp = tempfile.TemporaryDirectory()
+        self.tmp = Path(self._tmp.name)
+        self.addCleanup(self._tmp.cleanup)
+
+    def _run_status(self, target):
+        """Run `status` capturing stdout; return (exit_code, stdout_text)."""
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            rc = cli.main(["status", str(target)])
+        return rc, buf.getvalue()
+
+    def test_status_succeeds_on_generated_workspace(self):
+        target = self.tmp / "proj"
+        self.assertEqual(cli.main(["init", str(target)]), 0)
+        rc, out = self._run_status(target)
+        self.assertEqual(rc, 0)
+        # Even with blank values, the field labels are present.
+        for name in ("Status", "Sensitivity", "Project purpose",
+                     "Current state", "Next action"):
+            self.assertIn(name, out)
+
+    def test_status_prints_filled_fields(self):
+        target = self.tmp / "proj"
+        cli.main(["init", str(target)])
+        (target / "project-context.md").write_text(FILLED_CONTEXT, encoding="utf-8")
+
+        rc, out = self._run_status(target)
+        self.assertEqual(rc, 0)
+        self.assertIn("Status: In progress", out)
+        self.assertIn(
+            "Current state: Feature scoped; draft exists; production send not approved.",
+            out,
+        )
+        self.assertIn(
+            "Next action: Review draft and decide whether to test in staging.",
+            out,
+        )
+        # High-consequence section is surfaced when present.
+        self.assertIn("Unresolved high-consequence items:", out)
+        self.assertIn("Production email enablement requires owner approval.", out)
+
+    def test_status_missing_file_fails(self):
+        target = self.tmp / "empty"
+        target.mkdir()
+        rc = cli.main(["status", str(target)])
         self.assertEqual(rc, 1)
 
 

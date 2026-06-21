@@ -84,6 +84,88 @@ def init_project(target: Path, force: bool = False) -> int:
     return 0
 
 
+# Fields shown by `status`, in display order. Parsing is intentionally simple
+# (line-prefix matching) — this is not a Markdown parser.
+STATUS_FIELDS = (
+    "Status",
+    "Sensitivity",
+    "Project purpose",
+    "Current state",
+    "Next action",
+)
+
+_HIGH_CONSEQUENCE_HEADING = "## Unresolved high-consequence items"
+
+
+def _parse_context(text: str):
+    """Pull the status fields and high-consequence items out of *text*.
+
+    Returns ``(fields, high_consequence)`` where ``fields`` maps each known
+    field name to its value (empty string if blank) and ``high_consequence`` is
+    a list of the bullet lines under that section.
+    """
+    fields = {name: "" for name in STATUS_FIELDS}
+    lines = text.splitlines()
+
+    for line in lines:
+        for name in STATUS_FIELDS:
+            prefix = name + ":"
+            if line.startswith(prefix):
+                fields[name] = line[len(prefix):].strip()
+
+    high_consequence = []
+    in_section = False
+    for line in lines:
+        stripped = line.strip()
+        if stripped == _HIGH_CONSEQUENCE_HEADING:
+            in_section = True
+            continue
+        if in_section:
+            if stripped.startswith("## ") or stripped.startswith("# "):
+                break  # next section
+            if stripped:
+                high_consequence.append(stripped)
+
+    return fields, high_consequence
+
+
+def status_project(target: Path) -> int:
+    """Print a compact status summary from ``project-context.md``.
+
+    Returns a process exit code (0 = success, 1 = file missing/unreadable).
+    """
+    context = target / "project-context.md"
+    if not context.is_file():
+        print(
+            f"error: no project-context.md found in {target}. "
+            "Is this a HandoffOS workspace? Try `handoffos init`.",
+            file=sys.stderr,
+        )
+        return 1
+
+    try:
+        text = context.read_text(encoding="utf-8")
+    except OSError as exc:
+        print(f"error: could not read {context}: {exc}", file=sys.stderr)
+        return 1
+
+    fields, high_consequence = _parse_context(text)
+
+    print(f"HandoffOS status: {target.name}")
+    print()
+    for name in STATUS_FIELDS:
+        print(f"{name}: {fields[name]}".rstrip())
+
+    if high_consequence:
+        print()
+        print("Unresolved high-consequence items:")
+        for item in high_consequence:
+            # Items already start with "- " in the template; keep as written.
+            print(item if item.startswith("-") else f"- {item}")
+
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="handoffos",
@@ -115,6 +197,20 @@ def build_parser() -> argparse.ArgumentParser:
             "Does NOT delete or modify any other file in the directory."
         ),
     )
+
+    status = sub.add_parser(
+        "status",
+        help="Print a compact status summary from a workspace's project-context.md.",
+        description=(
+            "Read project-context.md in the given workspace and print Status, "
+            "Sensitivity, Project purpose, Current state, Next action, and any "
+            "unresolved high-consequence items."
+        ),
+    )
+    status.add_argument(
+        "project_dir",
+        help="Directory of an existing HandoffOS workspace.",
+    )
     return parser
 
 
@@ -124,6 +220,9 @@ def main(argv=None) -> int:
 
     if args.command == "init":
         return init_project(Path(args.project_dir), force=args.force)
+
+    if args.command == "status":
+        return status_project(Path(args.project_dir))
 
     parser.print_help()
     return 0
